@@ -11,6 +11,7 @@ if (APPLE)
     set(OPENSSL_INCLUDE_DIR "/usr/local/opt/openssl@1.1/include")
     set(OPENSSL_LIBRARIES "/usr/local/opt/openssl@1.1/lib")
 endif (APPLE)
+
 find_package(OpenSSL REQUIRED)
 find_package(nlohmann_json 3.2.0 REQUIRED)
 

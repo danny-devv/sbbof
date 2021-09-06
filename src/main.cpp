@@ -33,9 +33,9 @@ int main() {
         Functions:
         Prompt user input and 
         Case statement for options above
-        get_account_details() <-- gets the ethereum and bitcoin amounts from wallet 
-        deposit_into_wallet()
-        withdraw_from_wallet()
+        get_account_details()
+        deposit_funds()
+        withdraw_funds()
         sign_out()
         */
         // Try enum for menu options
@@ -46,7 +46,8 @@ int main() {
                 break;
             case 1:
                 // TODO: implement depositing feature
-                std::cout << "Depositing..." << std::endl;
+                clear_screen();
+                user.deposit_funds();
                 break;
             case 2:
                 // TODO: implement withdrawing feature

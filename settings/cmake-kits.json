@@ -1,0 +1,9 @@
+[
+    {
+        "name": "afl-clang++",
+        "compilers": {
+            "CC": "/usr/local/Cellar/afl-fuzz/2.57b_1/bin/afl-clang++",
+            "CXX": "/usr/local/Cellar/afl-fuzz/2.57b_1/bin/afl-clang++"
+        }
+    }
+]
