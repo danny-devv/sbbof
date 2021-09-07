@@ -31,10 +31,13 @@ class User {
             ethereum_account.id = eth_id;
             bitcoin_account.id = bit_id;
 
-            double eth_price = get_token_price("ETH");
+            std::map<std::string, double> priceMap;
+            priceMap = get_token_prices();
+
+            double eth_price = priceMap["ETH"];
             ethereum_account.price = eth_price;
 
-            double bit_price = get_token_price("BTC");
+            double bit_price = priceMap["BTC"];
             bitcoin_account.price = bit_price;
 
             ledger[eth_id] = ethereum_account;
@@ -52,6 +55,7 @@ class User {
         void deposit_info();
         bool check_crypto_api_key();
         double get_token_price(std::string symbol);
+        std::map<std::string, double> get_token_prices();
 };
 
 #endif
