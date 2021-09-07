@@ -1,5 +1,6 @@
 #ifndef SBBOF_USER_H
 #define SBBOF_USER_H
+#define CPPHTTPLIB_OPENSSL_SUPPORT
 
 #include <string>
 #include <iostream>

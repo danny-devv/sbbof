@@ -2,7 +2,7 @@
 using namespace std;
 
 void clear_screen() {
-    #if defined _WIN32
+    #if defined(WIN32) || defined(_WIN32) || defined(__WIN32)
         system("cls");
     #elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__) || (__APPLE__)
         std::system("clear");
