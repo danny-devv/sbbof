@@ -8,6 +8,14 @@ afl-fuzz -i test_cases -o findings /Users/danny/Documents/sbbof/build/ewallet @@
 afl-fuzz -i test_cases -o findings /Users/danny/Documents/sbbof/build/ewallet ["test", "3"]
 
 
+### Win Process Explorer Notes: 
+dbghelp.dll path: 
+C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\dbghelp.dll
+
+symbols:
+SRV*c:\Symbols*http://msdl.microsoft.com/download/symbols
+
+
 ### Developer Notes:
 
 Kill suspended application:
