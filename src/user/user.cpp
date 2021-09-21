@@ -60,6 +60,7 @@ std::map<std::string, double> User::get_token_prices() {
 	try {
 		httplib::Client cli("https://api.nomics.com");
 		if (!check_crypto_api_key()) {
+			// TODO Default values instead of error, removes API key dependency
 			throw std::runtime_error("API Key Not Set");
 		}
 		std::string api_key = std::getenv("CRYPTO_API_KEY");
@@ -115,7 +116,7 @@ void User::sign_out() {
 	}
 }
 
-double User::deposit_info(Account &account_selected) {
+void User::deposit_info(Account &account_selected) {
 	// Input deposit info
 	std::cout << "Enter Deposit Amount: ";
 	double current_acct_balance = account_selected.amount * account_selected.price;
@@ -133,11 +134,10 @@ double User::deposit_info(Account &account_selected) {
 	std::cout << "Tokens: " + std::to_string(account_selected.amount) << std::endl;
 	std::cout << "Price Per Token: " << account_selected.price << std::endl;
 	std::cout <<  "Your Balance: " << std::setprecision (2) << std::fixed << account_selected.balance << "\n" << std::endl;
-	return balance;
 	
 }
 
-double User::withdraw_info(Account &account_selected) {
+void User::withdraw_info(Account &account_selected) {
 	// Input deposit info
 	std::cout << "Enter Withdraw Amount: ";
 	double current_acct_balance = account_selected.amount * account_selected.price;
@@ -161,7 +161,6 @@ double User::withdraw_info(Account &account_selected) {
 	std::cout << "Tokens: " + std::to_string(account_selected.amount) << std::endl;
 	std::cout << "Price Per Token: " << account_selected.price << std::endl;
 	std::cout <<  "Your Balance: " << std::setprecision (2) << std::fixed << account_selected.balance << "\n" << std::endl;
-	return balance;
 }
 
 void User::deposit_funds(User& user) {
@@ -169,10 +168,13 @@ void User::deposit_funds(User& user) {
 	Method deposit funds
 	*/
 	Account& account_selected = select_account(user);
-	double deposit_amt = deposit_info(account_selected);
+	deposit_info(account_selected);
 }
 
 void User::withdraw_funds(User& user) {
+	/*
+	Method withdraw funds
+	*/
 	Account& account_selected = select_account(user);
-	double withdraw_amt = withdraw_info(account_selected);
+	withdraw_info(account_selected);
 }

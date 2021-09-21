@@ -54,8 +54,8 @@ class User {
     private:
         Account& select_account(User& user);
         void show_accounts();
-        double deposit_info(Account& account_selected);
-        double withdraw_info(Account& account_selected);
+        void deposit_info(Account& account_selected);
+        void withdraw_info(Account& account_selected);
         bool check_crypto_api_key();
         double get_token_price(std::string symbol);
         std::map<std::string, double> get_token_prices();
