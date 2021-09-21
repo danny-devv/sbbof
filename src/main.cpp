@@ -42,16 +42,15 @@ int main() {
         switch(get_menu_option()) {
             case 0:
                 clear_screen();
-                user.show_account_details();
+                user.show_account_details(user);
                 break;
             case 1:
-                // TODO: implement depositing feature
                 clear_screen();
-                user.deposit_funds();
+                user.deposit_funds(user);
                 break;
             case 2:
-                // TODO: implement withdrawing feature
-                std::cout << "Withdrawing..." << std::endl;
+                clear_screen();
+                user.withdraw_funds(user);
                 break;
             case 3:
                 clear_screen();

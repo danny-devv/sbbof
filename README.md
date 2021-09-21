@@ -13,8 +13,7 @@ dbghelp.dll path:
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\dbghelp.dll
 
 symbols:
-SRV*c:\Symbols*http://msdl.microsoft.com/download/symbols
-
+srv*c:\symbols*http://msdl.microsoft.com/download/symbols
 
 ### Developer Notes:
 

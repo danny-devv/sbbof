@@ -16,15 +16,16 @@ struct Account {
     std::string name;
     std::string symbol;
     int id;
-    int amount;
+    double amount;
     double price;
+    double balance;
 };
 
 class User {
     public:
         User() {
-            Account ethereum_account = {"Ethereum", "ETH", 0, 1, 0};
-            Account bitcoin_account = {"Bitcoin", "BTC", 0, 1, 0};
+            Account ethereum_account = {"Ethereum", "ETH", 0, 0, 0, 0.0};
+            Account bitcoin_account = {"Bitcoin", "BTC", 0, 0, 0, 0.0};
 
             int eth_id = 0;
             int bit_id = 1;
@@ -46,13 +47,15 @@ class User {
         int id;
         bool auth;
         std::map<int, Account> ledger;
-        void show_account_details();
-        void deposit_funds();
+        void show_account_details(User& user);
+        void deposit_funds(User& user);
+        void withdraw_funds(User& user);
         void sign_out();
     private:
-        Account select_account();
+        Account& select_account(User& user);
         void show_accounts();
-        void deposit_info();
+        double deposit_info(Account& account_selected);
+        double withdraw_info(Account& account_selected);
         bool check_crypto_api_key();
         double get_token_price(std::string symbol);
         std::map<std::string, double> get_token_prices();
