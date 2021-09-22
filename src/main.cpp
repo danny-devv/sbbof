@@ -5,22 +5,25 @@
 #include "user/user.h"
 #include "menu/menu.h"
 
+int User::id = 0;
+bool User::auth = false;
+
 int main() {
     // Welcome banner
     std::string welcome = "eSoftware Wallet";
     banner(welcome);
 
     // Auth loop
-    int auth = authenticate();
+    int auth_id = authenticate();
 
-    if (!auth)
+    if (!auth_id)
         // Authentication failed
         return 0;
     
     // Instantiate User and create main menu loop for user
     User user;
-    user.id = auth;
-    user.auth = true;
+    User::id = auth_id;
+    User::auth = true;
 
     while (user.auth) {
         // Enter main menu loop
