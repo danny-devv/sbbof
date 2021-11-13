@@ -19,9 +19,8 @@ Account& User::select_account(User& user) {
 
 	getline(std::cin >> std::ws, account_option);
 	selected_account = std::stoi(account_option);
-	Account& account_selected = user.ledger[selected_account];
 	clear_screen();
-	return account_selected;
+	return user.ledger[selected_account];;
 }
 
 double User::get_token_price(std::string symbol) {
@@ -92,8 +91,8 @@ void User::show_account_details(User& user) {
 	/*
 	Method print account details
 	*/
-	Account account_selected = select_account(user);
-	// Account account_selected = user.ledger[account_selected_i];
+	Account& account_selected = select_account(user);
+	
 	std::string account_name = account_selected.name;
 
 	double tokens = account_selected.amount;

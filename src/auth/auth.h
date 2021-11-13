@@ -10,7 +10,6 @@
 #include <time.h>
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 #include <iomanip>
 #include <nlohmann/json.hpp>
 #include "httplib.h"

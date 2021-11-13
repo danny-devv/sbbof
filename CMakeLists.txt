@@ -20,7 +20,7 @@ file(GLOB_RECURSE sources CONFIGURE_DEPENDS "src/*.cpp")
 add_executable(ewallet ${sources})
 
 if (WIN32)
-    target_link_libraries(ewallet nlohmann_json::nlohmann_json OpenSSL::SSL wsock32 ws2_32 crypt32)
+    target_link_libraries(ewallet nlohmann_json::nlohmann_json OpenSSL::SSL wsock32 ws2_32 crypt32 -static)
 endif (WIN32)
 if (APPLE)
     target_link_libraries(ewallet OpenSSL::SSL nlohmann_json::nlohmann_json)
