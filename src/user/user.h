@@ -44,9 +44,9 @@ class User {
             ledger[eth_id] = ethereum_account;
             ledger[bit_id] = bitcoin_account;
         }
-        static int id;
-        static bool auth;
-        static std::map<int, Account> ledger;
+        int id;
+        bool auth;
+        std::map<int, Account> ledger;
         void show_account_details(User& user);
         void deposit_funds(User& user);
         void withdraw_funds(User& user);

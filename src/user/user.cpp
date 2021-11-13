@@ -1,7 +1,6 @@
 #include "user.h"
 using json = nlohmann::json;
 
-std::map<int, Account> User::ledger;
 
 void User::show_accounts() {
 	std::cout << "0 - Ethereum" << std::endl;
